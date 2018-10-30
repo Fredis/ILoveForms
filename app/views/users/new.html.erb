@@ -1,0 +1,24 @@
+<h1>Add an user</h1>
+<p>Please, use to form below in order to add an user in our database:</p>
+
+<form action="<%= users_path %>" method="POST">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Username</label>
+    <input type="text" name="username" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Mail address</label>
+    <input type="text" name="email" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Bio</label>
+    <input type="text" name="bio" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+
+  <!-- Voici le input hidden afin de pouvoir dire à rails que c'est sécurisé -->
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <div class="form-group">
+    <input type="submit" class="form-control" id="formGroupExampleInput2" placeholder="Another input" value="ADD THE USER">
+  </div>
+</form>
