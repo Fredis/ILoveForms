@@ -1,6 +1,8 @@
 <h1>Add an user</h1>
 <p>Please, use to form below in order to add an user in our database:</p>
 
+
+<!-- HTML
 <form action="<%= users_path %>" method="POST">
   <div class="form-group">
     <label for="formGroupExampleInput">Username</label>
@@ -15,10 +17,38 @@
     <input type="text" name="bio" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
   </div>
 
-  <!-- Voici le input hidden afin de pouvoir dire à rails que c'est sécurisé -->
+   Voici le input hidden afin de pouvoir dire à rails que c'est sécurisé 
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <div class="form-group">
     <input type="submit" class="form-control" id="formGroupExampleInput2" placeholder="Another input" value="ADD THE USER">
   </div>
 </form>
+
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+  <div class="form-group">
+    <%= label_tag(:username)  %>
+    <%= text_field_tag :'username' %>
+  </div>
+    <br /> <br />
+
+  <%= label_tag 'Email' %>
+  <%= text_field_tag :'email' %>
+  <br /> <br />
+
+  <%= label_tag 'Bio' %>
+  <%= text_field_tag :'bio' %>
+  <br /> <br />
+
+  <%= submit_tag "Create User" %>
+
+<% end %>
+
+-->
+
+<%= form_tag users_path, method: :post, :class => "form-inline" do %>
+  <%= text_field_tag :username, params[:username] %>
+  <%= submit_tag "Créer", name: nil, class: "btn btn-default" %>   
+<% end %>
