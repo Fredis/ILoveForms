@@ -1,17 +1,11 @@
-<!--
-
 <h1>User created</h1>
 <p>Congratulations, your user
-<%= params[:username] %>
+	<% if params[:user] %>
+		<%=  params[:user][:username] %>
+	<% else %>
+		<%=  params[:username] %>
+	<% end %>
 has been created!
 </p>
 <p>One of us, one of us!</p>
-
---> 
-
-<h1>User created</h1>
-<p>Congratulations, your user
-<%=  params[:user][:username] %>
-has been created!
-</p>
-<p>One of us, one of us!</p>
+<a href="/users/new">Add an user...</a>
