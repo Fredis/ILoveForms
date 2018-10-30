@@ -15,7 +15,7 @@ Vous pourrez créer de nouveaux users qui seront enregistrés dans la base de do
 ## Comment se servir du programme 
 
 Pour faire marcher ce programme, il vous faut d'abord faire ```$ bundle install``` ensuite ```$ rails db:migrate``` et pour terminer ```$ rails db:seed```
-Pour afficher les users créés vous pouvez faire: ```rails console``` puis ```User.all```
+Pour afficher les users créés vous pouvez faire: ```heroku console``` puis ```User.all```
 
 ## L'arborescence du dossier et les programmes
 
