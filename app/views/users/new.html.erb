@@ -1,7 +1,9 @@
 <h1>Add an user</h1>
 <hr />
 <p>Please, use to form below in order to add an user in our database:</p>
-
+<hr />
+<b>Form HTML</b>
+<hr />
 <div style='width: 80%; margin-left: 30px; margin-top: 30px;'>
  <form action="<%= users_path %>" method="POST">  
     <label for="formGroupExampleInput">Username</label>
@@ -11,7 +13,8 @@
     <input type="text" name="email" class="form-control" id="formGroupExampleInput2" placeholder="Your email...">
     <br /><br />
     <label for="formGroupExampleInput2">Bio</label>
-    <input type="text" name="bio" class="form-control" id="formGroupExampleInput2" placeholder="Your bio...">
+    <textarea name="bio" class="form-control" id="formGroupExampleInput2" placeholder="Your bio...">
+    </textarea>
      <!-- Voici le input hidden afin de pouvoir dire à rails que c'est sécurisé -->
     <br /><br />
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -21,6 +24,8 @@
 
 <hr />
 
+<b>Form FORM_TAG</b>
+<hr />
 <div style='width: 80%; margin-left: 30px; margin-top: 30px;'>
   <%= form_tag users_path, method: :post do %>
   <div class="form-group">
@@ -31,7 +36,7 @@
     <%= text_field_tag 'email', '', placeholder: 'Your email...', class: "form-control", id: "formGroupExampleInput2" %>
     <br /><br />
     <%= label_tag 'Bio:' %>
-    <%= text_field_tag 'bio', '', placeholder: 'Your bio...', class: "form-control", id: "formGroupExampleInput2" %>
+    <%= text_area_tag 'bio', '', placeholder: 'Your bio...', class: "form-control", id: "formGroupExampleInput2" %>
     <br /><br />
     <%= submit_tag "Add the user", name: nil, class: "btn btn-success" %>
   </div>
@@ -40,6 +45,8 @@
 
 <hr />
 
+<b>Form FORM_FOR</b>
+<hr />
 <div style='width: 80%; margin-left: 30px; margin-top: 30px;'>
   <%= form_for @user do |f| %>
   <%= label_tag 'Username:' %>
