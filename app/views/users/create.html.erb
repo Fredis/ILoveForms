@@ -1,6 +1,17 @@
+<!--
+
 <h1>User created</h1>
-<p>Congratulations, you user
+<p>Congratulations, your user
 <%= params[:username] %>
+has been created!
+</p>
+<p>One of us, one of us!</p>
+
+--> 
+
+<h1>User created</h1>
+<p>Congratulations, your user
+<%=  params[:user][:username] %>
 has been created!
 </p>
 <p>One of us, one of us!</p>
